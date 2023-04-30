@@ -1,5 +1,22 @@
 class Solution:
     def romanToInt(self, s: str) -> int:
+        # val = 0
+        # num = 0
+        # for char in s[::-1]:
+        #     match char:
+        #         case 'I': num = 1
+        #         case 'V': num = 5
+        #         case 'X': num = 10
+        #         case 'L': num = 50
+        #         case 'C': num = 100
+        #         case 'D': num = 500
+        #         case 'M': num = 1000
+        #     if 4 * num < val:
+        #         val -= num
+        #     else:
+        #         val += num
+        # return val
+
         val = 0
         prev = ''
         for char in s:
