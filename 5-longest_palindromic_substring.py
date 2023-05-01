@@ -1,5 +1,29 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
+        # # DP 3
+        # dp = [[0]*len(s) for _ in range(len(s))]
+        # for i in range(len(s)):
+        #     dp[i][i] = 1
+
+        # max_l = 0
+        # loc = (0,1)
+
+        # if len(s) < 2: return s
+        
+        # for i in range(len(s)-1,-1,-1):
+        #     # j starts from the i location : to only work on the upper side of the diagonal 
+        #     for j in range(i+1,len(s)):
+        #         if s[i]==s[j]:
+        #             if j-i==1:
+        #                 dp[i][i] = 2
+        #                 continue
+        #             if dp[i+1][j-1]:
+        #                 dp[i][j] = 2 + dp[i+1][j-1] 
+        #         if max_l < j-i+1:
+        #             max_l = j-i+1
+        #             loc = (i+1, j)
+        # return s[loc[0]:loc[1]]
+
         # # DP 2
         # dp = [[False]*len(s) for _ in range(len(s))]
         # for i in range(len(s)):
@@ -26,7 +50,7 @@ class Solution:
                     start = left + 1
         return s[start:start+max_len]
 
-        # DP 1
+        # # DP 1
         # longest_palindrome = (0, 1)
         # dp = [[0]*len(s) for _ in range(len(s))]
         # # filling out the diagonal with True
