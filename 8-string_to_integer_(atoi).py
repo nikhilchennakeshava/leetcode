@@ -21,10 +21,6 @@ class Solution:
             number_started = True
         if val == '': return 0
         val = int(val) * sign
-        if val < -1 * pow(2,31): return -1 * pow(2,31)
-        if val > pow(2,31) - 1: return pow(2,31) - 1
+        val = max(-1 * pow(2,31), val)
+        val = min(pow(2,31) - 1, val)
         return val
-        
-            
-            
-            
