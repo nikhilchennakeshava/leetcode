@@ -1,5 +1,43 @@
+'''
+Given a string s, return the longest
+palindromic
+substring
+in s. 
+
+Example 1:
+
+Input: s = "babad"
+Output: "bab"
+Explanation: "aba" is also a valid answer.
+
+Example 2:
+
+Input: s = "cbbd"
+Output: "bb"
+
+Constraints:
+
+    1 <= s.length <= 1000
+    s consist of only digits and English letters.
+'''
+
+
 class Solution:
     def longestPalindrome(self, s: str) -> str:
+        # Expanding approach
+        str_length, max_len, start = len(s), 0, 0
+
+        for i in range(str_length):
+            for left,right in [(i,i),(i,i+1)]:
+                while left >= 0 and right < str_length and s[left] == s[right]:
+                    left -= 1
+                    right += 1
+                if right - left - 1 > max_len: 
+                    max_len = right - left - 1
+                    start = left + 1
+        return s[start:start+max_len]
+
+
         # # DP 3
         # dp = [[0]*len(s) for _ in range(len(s))]
         # for i in range(len(s)):
@@ -36,19 +74,6 @@ class Solution:
         #             if j-i+1 > len(res):
         #                 res = s[i:j+1]
         # return res
-        
-        # Expanding approach
-        str_length, max_len, start = len(s), 0, 0
-
-        for i in range(str_length):
-            for left,right in [(i,i),(i,i+1)]:
-                while left >= 0 and right < str_length and s[left] == s[right]:
-                    left -= 1
-                    right += 1
-                if right - left - 1 > max_len: 
-                    max_len = right - left - 1
-                    start = left + 1
-        return s[start:start+max_len]
 
         # # DP 1
         # longest_palindrome = (0, 1)
