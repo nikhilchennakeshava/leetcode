@@ -41,4 +41,8 @@ Tweet 2 has length = 32. It is an invalid tweet.
 # Write your MySQL query statement below
 
 select tweet_id from Tweets
-where length(content) > 15;
+where char_length(content) > 15;
+
+# length() is incorrect as byte length use char_length() instead
+# select tweet_id from Tweets
+# where length(content) > 15;
