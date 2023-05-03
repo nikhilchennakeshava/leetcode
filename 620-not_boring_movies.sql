@@ -47,5 +47,9 @@ We have three movies with odd-numbered IDs: 1, 3, and 5. The movie with ID = 3 i
 # Write your MySQL query statement below
 
 select * from Cinema
-where id%2 and description <> 'boring'
+where mod(id,2) <> 0 and description <> 'boring'
 order by rating desc;
+
+# select * from Cinema
+# where id%2 and description <> 'boring'
+# order by rating desc;
