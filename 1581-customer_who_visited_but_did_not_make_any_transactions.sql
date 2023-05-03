@@ -1,75 +1,79 @@
 /*
-Table: Users
+Table: Visits
 
-+--------------+---------+
-| Column Name  | Type    |
-+--------------+---------+
-| account      | int     |
-| name         | varchar |
-+--------------+---------+
-account is the primary key for this table.
-Each row of this table contains the account number of each user in the bank.
-There will be no two users having the same name in the table.
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| visit_id    | int     |
+| customer_id | int     |
++-------------+---------+
+visit_id is the primary key for this table.
+This table contains information about the customers who visited the mall.
 
 Table: Transactions
 
-+---------------+---------+
-| Column Name   | Type    |
-+---------------+---------+
-| trans_id      | int     |
-| account       | int     |
-| amount        | int     |
-| transacted_on | date    |
-+---------------+---------+
-trans_id is the primary key for this table.
-Each row of this table contains all changes made to all accounts.
-amount is positive if the user received money and negative if they transferred money.
-All accounts start with a balance of 0.
++----------------+---------+
+| Column Name    | Type    |
++----------------+---------+
+| transaction_id | int     |
+| visit_id       | int     |
+| amount         | int     |
++----------------+---------+
+transaction_id is the primary key for this table.
+This table contains information about the transactions made during the visit_id.
 
-Write an SQL query to report the name and balance of users with a balance higher than 10000. The balance of an account is equal to the sum of the amounts of all transactions involving that account.
+Write a SQL query to find the IDs of the users who visited without making any transactions and the number of times they made these types of visits.
 
-Return the result table in any order.
+Return the result table sorted in any order.
 
 The query result format is in the following example.
 
 Example 1:
 
 Input: 
-Users table:
-+------------+--------------+
-| account    | name         |
-+------------+--------------+
-| 900001     | Alice        |
-| 900002     | Bob          |
-| 900003     | Charlie      |
-+------------+--------------+
-Transactions table:
-+------------+------------+------------+---------------+
-| trans_id   | account    | amount     | transacted_on |
-+------------+------------+------------+---------------+
-| 1          | 900001     | 7000       |  2020-08-01   |
-| 2          | 900001     | 7000       |  2020-09-01   |
-| 3          | 900001     | -3000      |  2020-09-02   |
-| 4          | 900002     | 1000       |  2020-09-12   |
-| 5          | 900003     | 6000       |  2020-08-07   |
-| 6          | 900003     | 6000       |  2020-09-07   |
-| 7          | 900003     | -4000      |  2020-09-11   |
-+------------+------------+------------+---------------+
+Visits
++----------+-------------+
+| visit_id | customer_id |
++----------+-------------+
+| 1        | 23          |
+| 2        | 9           |
+| 4        | 30          |
+| 5        | 54          |
+| 6        | 96          |
+| 7        | 54          |
+| 8        | 54          |
++----------+-------------+
+Transactions
++----------------+----------+--------+
+| transaction_id | visit_id | amount |
++----------------+----------+--------+
+| 2              | 5        | 310    |
+| 3              | 5        | 300    |
+| 9              | 5        | 200    |
+| 12             | 1        | 910    |
+| 13             | 2        | 970    |
++----------------+----------+--------+
 Output: 
-+------------+------------+
-| name       | balance    |
-+------------+------------+
-| Alice      | 11000      |
-+------------+------------+
++-------------+----------------+
+| customer_id | count_no_trans |
++-------------+----------------+
+| 54          | 2              |
+| 30          | 1              |
+| 96          | 1              |
++-------------+----------------+
 Explanation: 
-Alice's balance is (7000 + 7000 - 3000) = 11000.
-Bob's balance is 1000.
-Charlie's balance is (6000 + 6000 - 4000) = 8000.
+Customer with id = 23 visited the mall once and made one transaction during the visit with id = 12.
+Customer with id = 9 visited the mall once and made one transaction during the visit with id = 13.
+Customer with id = 30 visited the mall once and did not make any transactions.
+Customer with id = 54 visited the mall three times. During 2 visits they did not make any transactions, and during one visit they made 3 transactions.
+Customer with id = 96 visited the mall once and did not make any transactions.
+As we can see, users with IDs 30 and 96 visited the mall one time without making any transactions. Also, user 54 visited the mall twice and did not make any transactions.
 */
 
 
 # Write your MySQL query statement below
 
-select name, sum(amount) balance
-from Users join Transactions using (account)
-group by name having balance > 10000;
+select customer_id, count(*) count_no_trans
+from Visits v left join Transactions t using(visit_id)
+where transaction_id is null
+group by customer_id;
