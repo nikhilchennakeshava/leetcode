@@ -1,4 +1,6 @@
 /*
+1907. Count Salary Categories
+
 Table: Accounts
 
 +-------------+------+
