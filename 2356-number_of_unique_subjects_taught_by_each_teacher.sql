@@ -1,4 +1,6 @@
 /*
+2356. Number of Unique Subjects Taught by Each Teacher
+
 Table: Teacher
 
 +-------------+------+
