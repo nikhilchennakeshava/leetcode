@@ -1,4 +1,6 @@
 /*
+1393. Capital Gain/Loss
+
 Table: Stocks
 
 +---------------+---------+
