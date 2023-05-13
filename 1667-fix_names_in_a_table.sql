@@ -1,4 +1,6 @@
 /*
+1667. Fix Names in a Table
+
 Table: Users
 
 +----------------+---------+
