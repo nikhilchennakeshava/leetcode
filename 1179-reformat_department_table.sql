@@ -1,4 +1,6 @@
 /*
+1179. Reformat Department Table
+
 Table: Department
 
 +-------------+---------+
