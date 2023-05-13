@@ -1,4 +1,6 @@
 /*
+1341. Movie Rating
+
 Table: Movies
 
 +---------------+---------+
