@@ -1,12 +1,6 @@
-# Write your MySQL query statement below
+/*
+178. Rank Scores
 
-# select score, (select count(distinct score) from Scores where score >= s.score) `rank`
-# from Scores s
-# order by score desc;
-
-SELECT score, DENSE_RANK() OVER (ORDER BY score DESC) `rank`
-FROM Scores ORDER BY score DESC;
-a/*
 Table: Scores
 
 +-------------+---------+
