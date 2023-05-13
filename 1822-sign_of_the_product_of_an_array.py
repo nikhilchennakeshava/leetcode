@@ -1,4 +1,6 @@
 '''
+1822. Sign of the Product of an Array
+
 There is a function signFunc(x) that returns:
     1 if x is positive.
     -1 if x is negative.
