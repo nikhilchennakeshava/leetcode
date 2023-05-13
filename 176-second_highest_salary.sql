@@ -1,4 +1,6 @@
 /*
+176. Second Highest Salary
+
 Table: Employee
 
 +-------------+------+
