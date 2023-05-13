@@ -1,4 +1,6 @@
 /*
+610. Triangle Judgement
+
 Table: Triangle
 
 +-------------+------+
