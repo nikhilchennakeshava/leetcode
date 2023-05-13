@@ -1,4 +1,6 @@
 /*
+620. Not Boring Movies
+
 Table: Cinema
 
 +----------------+----------+
