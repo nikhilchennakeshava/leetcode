@@ -1,4 +1,6 @@
 /*
+1934. Confirmation Rate
+
 Table: Signups
 
 +----------------+----------+
