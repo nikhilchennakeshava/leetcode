@@ -1,4 +1,6 @@
 /*
+196. Delete Duplicate Emails
+
 Table: Person
 
 +-------------+---------+
