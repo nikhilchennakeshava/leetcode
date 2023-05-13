@@ -1,4 +1,6 @@
 /*
+1795. Rearrange Products Table
+
 Table: Products
 
 +-------------+---------+
