@@ -1,4 +1,6 @@
 /*
+1251. Average Selling Price
+
 Table: Prices
 
 +---------------+---------+
