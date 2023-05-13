@@ -1,4 +1,6 @@
 /*
+627. Swap Salary
+
 Table: Salary
 
 +-------------+----------+
