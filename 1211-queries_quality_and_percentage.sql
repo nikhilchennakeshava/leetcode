@@ -1,4 +1,6 @@
 /*
+1211. Queries Quality and Percentage
+
 Table: Queries
 
 +-------------+---------+
