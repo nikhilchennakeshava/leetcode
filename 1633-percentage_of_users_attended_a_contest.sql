@@ -1,4 +1,6 @@
 /*
+1633. Percentage of Users Attended a Contest
+
 Table: Users
 
 +-------------+---------+
