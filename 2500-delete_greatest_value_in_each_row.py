@@ -1,4 +1,6 @@
 '''
+2500. Delete Greatest Value in Each Row
+
 You are given an m x n matrix grid consisting of positive integers.
 
 Perform the following operation until grid becomes empty:
