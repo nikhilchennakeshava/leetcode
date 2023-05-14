@@ -36,4 +36,11 @@ Follow up: If this function is called many times, how would you optimize it?
 
 class Solution:
     def hammingWeight(self, n: int) -> int:
-        return n.bit_count()
+        count = 0
+        while n:
+            count += 1
+            n = n & (n - 1)
+        
+        return count
+
+        # return n.bit_count()
