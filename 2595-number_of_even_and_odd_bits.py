@@ -34,3 +34,12 @@ Constraints:
 class Solution:
     def evenOddBit(self, n: int) -> List[int]:
         return [(n & 0b0101010101).bit_count(), (n & 0b1010101010).bit_count()]
+
+#            Example:  n = 545 --> '0b1000100001'
+
+#        n = 1000100001       n = 1000100001
+#    evens = 0101010101    odds = 1010101010
+#            ––––––––––           ––––––––––
+#  evens&n = 0000000001  odds&n = 1000100000
+
+#                  return [1,2]
