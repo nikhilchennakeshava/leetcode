@@ -39,6 +39,7 @@ class Solution:
         # Here we can have 2 APs - one for weekly and one for remaining days
         # Weekly -> 28,35,42 with a = 28, n = weeks, d = 7
         # Daily -> weeks+1, weeks+2 with a = weeks+1, n = days, d = 1
+        
         money = (weeks/2) * (2*28 + (weeks-1)*7) + (days/2) * (2*(weeks+1) + (days-1))
 
         return int(money)
