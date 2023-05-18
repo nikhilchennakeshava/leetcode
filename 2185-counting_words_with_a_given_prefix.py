@@ -29,4 +29,4 @@ Constraints:
 
 class Solution:
     def prefixCount(self, words: List[str], pref: str) -> int:
-        sum(word.startswith(pref) for word in words)
+        return sum(word.startswith(pref) for word in words)
