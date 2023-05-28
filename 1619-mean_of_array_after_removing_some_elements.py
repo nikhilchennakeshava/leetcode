@@ -31,6 +31,8 @@ Constraints:
 
 class Solution:
     def trimMean(self, arr: List[int]) -> float:
-        arr.sort()
-        start, end = len(arr)//20, len(arr)-len(arr)//20
-        return mean(arr[start:end])
+        return mean(sorted(arr)[len(arr)//20:-len(arr)//20])
+
+        # arr.sort()
+        # start, end = len(arr)//20, len(arr)-len(arr)//20
+        # return mean(arr[start:end])
